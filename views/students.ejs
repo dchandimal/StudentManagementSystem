@@ -1,0 +1,59 @@
+
+<%- include('./partial/header'); %>
+
+<main>
+    <div class="ui segment">
+
+        <div class="ui grid">
+            <div class="eight wide column">
+                <h1>Student List</h1>
+            </div>
+
+            <div class="eight wide right aligned column">
+                <a href="/register" class="ui primary button">
+                    <i class="user plus icon"></i>
+                    Register New Student
+                </a>
+            </div>
+        </div>
+
+        <table class="ui celled table">
+
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Name</th>
+                    <th>Degree</th>
+                    <th>GPA</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <% students.forEach(function(student) { %>
+
+                    <tr>
+                        <td><%= student.id %></td>
+                        <td><%= student.name %></td>
+                        <td><%= student.degree %></td>
+                        <td><%= student.gpa %></td>
+
+                        <td>
+                            <a href="/students/<%= student.id %>"
+                               class="ui primary button">
+                                View Details
+                            </a>
+                        </td>
+                    </tr>
+
+                <% }); %>
+
+            </tbody>
+
+        </table>
+
+    </div>
+</main>
+
+<%- include('./partial/footer'); %>

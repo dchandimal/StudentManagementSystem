@@ -1,0 +1,69 @@
+
+<%- include('./partial/header'); %>
+
+<main>
+    <div class="ui segment">
+
+        <h1>Students by Degree</h1>
+
+        <h3>
+            Degree: <%= degree %>
+        </h3>
+
+        <% if (students.length > 0) { %>
+
+            <table class="ui celled table">
+
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Name</th>
+                        <th>Degree</th>
+                        <th>GPA</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <% students.forEach(function(student) { %>
+
+                        <tr>
+                            <td><%= student.id %></td>
+
+                            <td><%= student.name %></td>
+
+                            <td><%= student.degree %></td>
+
+                            <td><%= student.gpa %></td>
+
+                            <td>
+                                <a href="/students/<%= student.id %>"
+                                   class="ui primary button">
+                                    View Details
+                                </a>
+                            </td>
+                        </tr>
+
+                    <% }); %>
+
+                </tbody>
+
+            </table>
+
+        <% } else { %>
+
+            <div class="ui warning message">
+                No students found for this degree.
+            </div>
+
+        <% } %>
+
+        <a href="/students" class="ui button">
+            Back to Students
+        </a>
+
+    </div>
+</main>
+
+<%- include('./partial/footer'); %>

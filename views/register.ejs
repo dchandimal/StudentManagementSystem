@@ -1,0 +1,77 @@
+<%- include('./partial/header'); %>
+
+<main>
+  <div class="ui segment">
+    <h1 class="ui header">
+      <i class="user plus icon"></i>
+      <div class="content">
+        Student Registration
+        <div class="sub header">
+          Enter the details to register a new student.
+        </div>
+      </div>
+    </h1>
+
+    <div class="ui divider"></div>
+
+    <form action="/register" method="POST" class="ui form">
+      <div class="field">
+        <label>Student ID</label>
+        <input
+          type="text"
+          name="id"
+          placeholder="Enter student ID (e.g. S004)"
+          required
+        />
+      </div>
+
+      <div class="field">
+        <label>Student Name</label>
+        <input
+          type="text"
+          name="name"
+          placeholder="Enter student full name"
+          required
+        />
+      </div>
+
+      <div class="field">
+        <label>Degree Programme</label>
+
+        <select name="degree" class="ui dropdown" required>
+          <option value="">Select Degree</option>
+          <option value="Information Technology">Information Technology</option>
+          <option value="Software Engineering">Software Engineering</option>
+          <option value="Computer Science">Computer Science</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>GPA</label>
+        <input
+          type="number"
+          name="gpa"
+          placeholder="Enter GPA (0.00 - 4.00)"
+          min="0"
+          max="4"
+          step="0.01"
+          required
+        />
+      </div>
+
+      <div class="ui divider"></div>
+
+      <button type="submit" class="ui primary button">
+        <i class="save icon"></i>
+        Register Student
+      </button>
+
+      <a href="/students" class="ui button">
+        <i class="arrow left icon"></i>
+        Back to Students
+      </a>
+    </form>
+  </div>
+</main>
+
+<%- include('./partial/footer'); %>

@@ -1,0 +1,34 @@
+<%- include('./partial/header'); %>
+
+<main>
+  <div class="ui segment">
+    <h1>Student Details</h1>
+
+    <div class="ui card">
+      <div class="content">
+        <div class="header"><%= student.name %></div>
+
+        <div class="description">
+          <p>
+            <strong>Student ID:</strong>
+            <%= student.id %>
+          </p>
+
+          <p>
+            <strong>Degree:</strong>
+            <%= student.degree %>
+          </p>
+
+          <p>
+            <strong>GPA:</strong>
+            <%= student.gpa %>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <a href="/students">Back to Students</a>
+  </div>
+</main>
+
+<%- include('./partial/footer'); %>

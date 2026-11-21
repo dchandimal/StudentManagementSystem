@@ -1,0 +1,56 @@
+
+<%- include('./partial/header'); %>
+
+<main>
+    <div class="ui segment">
+
+        <h1>Student Results</h1>
+
+        <table class="ui celled table">
+
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Name</th>
+                    <th>GPA</th>
+                    <th>Performance</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <% students.forEach(function(student) { %>
+
+                    <tr>
+                        <td><%= student.id %></td>
+
+                        <td><%= student.name %></td>
+
+                        <td><%= student.gpa %></td>
+
+                        <td>
+                            <% if (student.gpa >= 3.7) { %>
+                                Excellent
+
+                            <% } else if (student.gpa >= 3.3) { %>
+                                Very Good
+
+                            <% } else if (student.gpa >= 3.0) { %>
+                                Good
+
+                            <% } else { %>
+                                Average
+                            <% } %>
+                        </td>
+                    </tr>
+
+                <% }); %>
+
+            </tbody>
+
+        </table>
+
+    </div>
+</main>
+
+<%- include('./partial/footer'); %>
